@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-circular-references: true
+
+  datasource:
+    driver-class-name: ${artist.datasource.driver-class-name}
+    url: "jdbc:mysql://${artist.datasource.host}:${artist.datasource.port}/${artist.datasource.database}?serverTimezone=Asia/Tokyo&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true"
+    username: ${artist.datasource.username}
+    password: ${artist.datasource.password}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    show-sql: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+logging:
+  level:
+    com:
+      yoshida:
+        artistartwork: debug
+    org:
+      hibernate:
+        SQL: debug
+
+artist:
+  jwt:
+    admin-secret-key: "Yoshida-Kinn@123#ArtPortfolio"
+    admin-ttl: 7200000
+    admin-token-name: token
