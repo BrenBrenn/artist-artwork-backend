@@ -20,7 +20,9 @@ public class Artist {
 
     //Split bio into two fields
 
-    //shortBio (500 chars) for homepage(ARTIST) brief intro
+    /**
+     * shortBio (500 chars) for homepage(ARTIST) brief intro
+     */
     @Column(name = "shortBio", length = 500)
     private String shortBio;
 
