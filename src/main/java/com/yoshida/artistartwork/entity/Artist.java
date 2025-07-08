@@ -38,6 +38,15 @@ public class Artist {
     @Column(nullable = false, length = 100)
     private String email;
 
+    /**
+     * Line ID for LINE notification
+     * - Optional, can be null
+     * - Length: 6-20 characters
+     * - Used for LINE notifications
+     */
+    @Column(length = 20)
+    private String lineId;
+
     @Column(length = 255)
     private String avatar;
 
@@ -47,11 +56,11 @@ public class Artist {
     // - Debugging: To assist in troubleshooting and issue tracking
 
     /**
-     * Timezone-aware
+     * Timezone-aware, automatically managed by database
      */
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;
 
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime updateTime;
 }

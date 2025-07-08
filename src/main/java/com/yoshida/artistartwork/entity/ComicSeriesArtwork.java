@@ -20,14 +20,14 @@ public class ComicSeriesArtwork {
 
     /**
      * Display order within the series
-     * Lower numbers appear first (1, 2, 3, etc.)
+     * Lower numbers appear first (0, 1, 2, 3, etc.)
      */
     @Column(nullable = false)
     private Integer sortOrder = 0; // Order in Series
 
     /**
-     * Timezone-aware
+     * Timezone-aware, automatically set on insert
      */
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;
 }

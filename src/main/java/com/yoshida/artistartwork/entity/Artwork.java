@@ -43,11 +43,11 @@ public class Artwork {
     private Integer status = 1; // 1 Visible 0 Hidden
 
     /**
-     * Timezone-aware
+     * Timezone-aware, automatically set on insert/update
      */
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;
 
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime updateTime;
 }

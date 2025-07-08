@@ -32,9 +32,10 @@ public class ArtworkLikes {
     private Integer userId; // Reserved for future registration
 
     /**
-     * Timezone-aware
+     * Timezone-aware, automatically set on insert
+     * No need to update the timestamp - records are never updated
      */
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;
 
 }

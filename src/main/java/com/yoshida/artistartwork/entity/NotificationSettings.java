@@ -19,11 +19,11 @@ public class NotificationSettings {
     private Boolean isEnabled = false; // 1 Yes 0 No, default is 0 (disabled)
 
     /**
-     * Timezone-aware
+     * Timezone-aware, automatically set on insert/update
      */
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;
 
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime updateTime;
 }

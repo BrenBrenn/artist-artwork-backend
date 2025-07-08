@@ -47,14 +47,14 @@ public class ComicSeries {
      * - Example: to insert between 10 and 20, use 15
      */
     @Column(nullable = false)
-    private Integer sort = 0;
+    private Integer sort = 10;
 
     /**
-     * Timezone-aware
+     * Timezone-aware, automatically set on insert/update
      */
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;
 
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime updateTime;
 }

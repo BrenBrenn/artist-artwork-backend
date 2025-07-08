@@ -29,12 +29,12 @@ public class SocialMediaLinks {
     private Integer status = 1; // 1 Active 0 Inactive
 
     /**
-     * Timezone-aware
+     * Timezone-aware, automatically set on insert/update
      */
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;
 
-    @Column(nullable = false)
+    @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime updateTime;
 
 }
