@@ -26,7 +26,7 @@ public class ComicSeriesArtwork {
     private Integer sortOrder = 0; // Order in Series
 
     /**
-     * Timezone-aware, automatically set on insert
+     * Timezone-aware, automatically managed by database
      */
     @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;

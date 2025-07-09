@@ -16,10 +16,10 @@ public class NotificationSettings {
     private String notificationType; // like_backend, comment_backend, comment_email, comment_line
 
     @Column(nullable = false)
-    private Boolean isEnabled = false; // 1 Yes 0 No, default is 0 (disabled)
+    private Boolean isEnabled = false; // Notification enabled: true=enabled, false=disabled (default)
 
     /**
-     * Timezone-aware, automatically set on insert/update
+     * Timezone-aware, automatically managed by database
      */
     @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;

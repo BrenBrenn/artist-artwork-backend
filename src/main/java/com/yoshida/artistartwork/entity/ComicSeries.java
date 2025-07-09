@@ -50,7 +50,7 @@ public class ComicSeries {
     private Integer sort = 10;
 
     /**
-     * Timezone-aware, automatically set on insert/update
+     * Timezone-aware, automatically managed by database
      */
     @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;

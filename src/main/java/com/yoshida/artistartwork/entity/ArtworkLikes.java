@@ -32,7 +32,7 @@ public class ArtworkLikes {
     private Integer userId; // Reserved for future registration
 
     /**
-     * Timezone-aware, automatically set on insert
+     * Timezone-aware, automatically managed by database
      * No need to update the timestamp - records are never updated
      */
     @Column(nullable = false, insertable = false, updatable = false)

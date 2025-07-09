@@ -2,7 +2,6 @@ package com.yoshida.artistartwork.entity;
 
 import lombok.Data;
 import jakarta.persistence.*;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 @Data
@@ -29,7 +28,7 @@ public class SocialMediaLinks {
     private Integer status = 1; // 1 Active 0 Inactive
 
     /**
-     * Timezone-aware, automatically set on insert/update
+     * Timezone-aware, automatically managed by database
      */
     @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;

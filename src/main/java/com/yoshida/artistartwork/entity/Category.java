@@ -37,7 +37,7 @@ public class Category {
     private Integer status = 1; // 1 Enabled 0 Disabled
 
     /**
-     * Timezone-aware, automatically set on insert/update
+     * Timezone-aware, automatically managed by database
      */
     @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;

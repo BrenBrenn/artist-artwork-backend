@@ -37,13 +37,13 @@ public class Artwork {
     private String description; // Artwork description
 
     @Column(nullable = false)
-    private Boolean isNsfw = false; // 1 NSFW 0 Safe
+    private Boolean isNsfw = false; // NSFW flag: true=NSFW, false=Safe
 
     @Column(nullable = false)
     private Integer status = 1; // 1 Visible 0 Hidden
 
     /**
-     * Timezone-aware, automatically set on insert/update
+     * Timezone-aware, automatically managed by database
      */
     @Column(nullable = false, insertable = false, updatable = false)
     private OffsetDateTime createTime;
